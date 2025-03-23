@@ -9,11 +9,11 @@ class UpdateCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'car_make' => 'required|string|max:255',
-            'car_model' => 'required|string|max:255',
-            'car_year' => 'required|integer|min:1900|max:' . (date('Y') + 1),
-            'car_price' => 'required|numeric|min:0',
-            'car_status' => 'required|boolean',
+            'car_make' => 'sometimes|string|max:255',
+            'car_model' => 'sometimes|string|max:255',
+            'car_year' => 'sometimes|integer|min:1900|max:' . (date('Y') + 1),
+            'car_price' => 'sometimes|numeric|min:0',
+            'car_status' => 'sometimes|boolean',
         ];
     }
 }
